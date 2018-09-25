@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/td.cl_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/td.app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
+        app:layout_anchor="@+id/td.app_bar"
+        app:layout_anchorGravity="left|top">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/td.toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/CTLExpandedTextStyle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/td.toolbar">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/td.iv_bg_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/stadium_default" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/td.civ_team_badge"
+                        android:layout_width="@dimen/imgSize"
+                        android:layout_height="@dimen/imgSize"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="false"
+                        android:src="@drawable/badge_placeholder"
+                        app:civ_circle_background_color="@color/colorPrimaryDark"
+                        app:civ_border_width="@dimen/defalt"
+                        app:civ_border_color="@color/colorPrimaryDark"/>
+
+                    <TextView
+                        android:id="@+id/td.tv_team_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/shimmer_color"
+                        android:paddingEnd="@dimen/s"
+                        android:paddingStart="@dimen/s"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        tools:text="@sample/tools:full_names" />
+
+                    <TextView
+                        android:id="@+id/td.tv_team_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/shimmer_color"
+                        android:paddingEnd="@dimen/s"
+                        android:paddingStart="@dimen/s"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        tools:text="@sample/tools:date/ddmmyy" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/td.ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/td.tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/info" />
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Player" />
+        </android.support.design.widget.TabLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/td.view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/td.fab_fav_loading"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/defalt" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/td.fab_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/defalt"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_favorite_border_white_24dp"
+        app:backgroundTint="@color/pink600"
+        app:fabSize="normal"
+        app:layout_anchor="@+id/td.ll"
+        app:layout_anchorGravity="bottom|end"
+        app:rippleColor="@color/colorPrimaryDark" />
+
+
+</android.support.design.widget.CoordinatorLayout>

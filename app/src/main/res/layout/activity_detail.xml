@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/s">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/defalt">
+
+                        <ImageView
+                            android:id="@+id/iv_detail_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:src="@drawable/ic_access_time_black_24dp"
+                            app:layout_constraintBottom_toTopOf="@id/tv_detail_dow"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                            app:layout_constraintStart_toStartOf="@+id/guideline"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_dow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="@dimen/s"
+                            app:layout_constraintBottom_toTopOf="@id/tv_detail_date"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                            app:layout_constraintStart_toStartOf="@+id/guideline"
+                            app:layout_constraintTop_toBottomOf="@id/iv_detail_time"
+                            tools:text="@tools:sample/date/day_of_week" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="@dimen/s"
+                            app:layout_constraintBottom_toTopOf="@id/tv_detail_time"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                            app:layout_constraintStart_toStartOf="@+id/guideline"
+                            app:layout_constraintTop_toBottomOf="@id/tv_detail_dow"
+                            tools:text="@tools:sample/date/ddmmyy" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="@dimen/s"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                            app:layout_constraintStart_toStartOf="@+id/guideline"
+                            app:layout_constraintTop_toBottomOf="@id/tv_detail_date"
+                            tools:text="00:00" />
+
+                        <!--home-->
+                        <ImageView
+                            android:id="@+id/iv_detail_home"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/imgSize"
+                            android:layout_marginBottom="@dimen/s"
+                            android:layout_marginTop="@dimen/s"
+                            android:src="@drawable/badge_placeholder"
+                            app:layout_constraintBottom_toTopOf="@id/tv_detail_home"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_detail_homeScore" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/s"
+                            android:ellipsize="marquee"
+                            android:gravity="center"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:maxWidth="@dimen/imgSize"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/iv_detail_home"
+                            tools:text="@sample/tools:last_names" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_homeScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textAppearance="@android:style/TextAppearance.Large"
+                            app:layout_constraintBottom_toTopOf="@id/iv_detail_home"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_chainStyle="spread_inside"
+                            tools:text="@sample/tools:first_names" />
+
+                        <!--away-->
+
+                        <ImageView
+                            android:id="@+id/iv_detail_away"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/imgSize"
+                            android:layout_marginBottom="@dimen/s"
+                            android:layout_marginTop="@dimen/s"
+                            android:src="@drawable/badge_placeholder"
+                            app:layout_constraintBottom_toTopOf="@id/tv_detail_away"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/guideline2"
+                            app:layout_constraintTop_toBottomOf="@id/tv_detail_awayScore" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_away"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/s"
+                            android:ellipsize="marquee"
+                            android:gravity="center"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:maxWidth="@dimen/imgSize"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/guideline2"
+                            app:layout_constraintTop_toBottomOf="@+id/iv_detail_away"
+                            tools:text="@sample/tools:last_names" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_awayScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="16dp"
+                            android:gravity="center"
+                            android:textAppearance="@android:style/TextAppearance.Large"
+                            app:layout_constraintBottom_toTopOf="@id/iv_detail_away"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/guideline2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_chainStyle="packed"
+                            tools:text="@sample/tools:first_names" />
+
+                        <android.support.constraint.Guideline
+                            android:id="@+id/guideline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.37" />
+
+                        <android.support.constraint.Guideline
+                            android:id="@+id/guideline2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.6" />
+
+                    </android.support.constraint.ConstraintLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/s"
+                    android:layout_marginEnd="@dimen/defalt"
+                    android:layout_marginStart="@dimen/defalt"
+                    android:layout_marginTop="@dimen/s">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/defalt">
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_span="2"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/goals"
+                                android:textAppearance="@android:style/TextAppearance.Large"
+                                android:textColor="@color/colorAccent" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_dg_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                tools:text="@sample/tools:first_names" />
+
+                            <TextView
+                                android:id="@+id/tv_dg_away"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="@sample/tools:last_names" />
+                        </TableRow>
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/s"
+                    android:layout_marginEnd="@dimen/defalt"
+                    android:layout_marginStart="@dimen/defalt"
+                    android:layout_marginTop="@dimen/s">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/defalt">
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_span="2"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/red_cards"
+                                android:textAppearance="@android:style/TextAppearance.Large"
+                                android:textColor="@color/colorAccent" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_drc_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                tools:text="@sample/tools:first_names" />
+
+                            <TextView
+                                android:id="@+id/tv_drc_away"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="@sample/tools:last_names" />
+                        </TableRow>
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/s"
+                    android:layout_marginEnd="@dimen/defalt"
+                    android:layout_marginStart="@dimen/defalt"
+                    android:layout_marginTop="@dimen/s">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/defalt">
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_span="2"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/yellow_cards"
+                                android:textAppearance="@android:style/TextAppearance.Large"
+                                android:textColor="@color/colorAccent" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_dyc_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                tools:text="@sample/tools:first_names" />
+
+                            <TextView
+                                android:id="@+id/tv_dyc_away"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="@sample/tools:last_names" />
+                        </TableRow>
+
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/s"
+                    android:layout_marginEnd="@dimen/defalt"
+                    android:layout_marginStart="@dimen/defalt"
+                    android:layout_marginTop="@dimen/s">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/defalt">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_span="2"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/lineups"
+                                android:textAppearance="@android:style/TextAppearance.Large"
+                                android:textColor="@color/colorAccent" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/s">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_span="2"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:text="@string/goalkeeper"
+                                android:textAppearance="@android:style/TextAppearance.Medium"
+                                android:textColor="@color/lightBlue"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_dgk_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                tools:text="@sample/tools:first_names" />
+
+                            <TextView
+                                android:id="@+id/tv_dgk_away"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="@sample/tools:last_names" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/s"
+                                android:layout_span="2"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:text="@string/defense"
+                                android:textAppearance="@android:style/TextAppearance.Medium"
+                                android:textColor="@color/lightBlue"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_ddf_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                tools:text="@sample/tools:first_names" />
+
+                            <TextView
+                                android:id="@+id/tv_ddf_away"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="@sample/tools:last_names" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/s"
+                                android:layout_span="2"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:text="@string/midfield"
+                                android:textAppearance="@android:style/TextAppearance.Medium"
+                                android:textColor="@color/lightBlue"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_dmf_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                tools:text="@sample/tools:first_names" />
+
+                            <TextView
+                                android:id="@+id/tv_dmf_away"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="@sample/tools:last_names" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/s"
+                                android:layout_span="2"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:text="@string/forward"
+                                android:textAppearance="@android:style/TextAppearance.Medium"
+                                android:textColor="@color/lightBlue"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_dfw_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                tools:text="@sample/tools:first_names" />
+
+                            <TextView
+                                android:id="@+id/tv_dfw_away"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="@sample/tools:last_names" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/s"
+                                android:layout_span="2"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:text="@string/substitutes"
+                                android:textAppearance="@android:style/TextAppearance.Medium"
+                                android:textColor="@color/lightBlue"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_dsb_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                tools:text="@sample/tools:first_names" />
+
+                            <TextView
+                                android:id="@+id/tv_dsb_away"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="@sample/tools:last_names" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="88dp" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_fav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/defalt"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_favorite_border_white_24dp"
+        app:backgroundTint="@color/pink600"
+        app:fabSize="normal"
+        app:layout_anchor="@+id/srl_detail"
+        app:layout_anchorGravity="right|bottom" />
+</android.support.design.widget.CoordinatorLayout>

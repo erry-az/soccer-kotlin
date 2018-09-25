@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/defalt">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/s"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="16dp"
+                android:background="@color/colorShim" />
+
+            <ImageView
+                android:id="@+id/iv_ie_home"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/imgSize"
+                android:layout_marginBottom="@dimen/s"
+                android:layout_marginTop="@dimen/s"
+                android:src="@drawable/badge_placeholder" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:background="@color/colorShim" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_ie_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_access_time_black_24dp" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="@dimen/s"
+                android:background="@color/colorShim" />
+
+            <View
+                android:layout_width="64dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="@dimen/s"
+                android:background="@color/colorShim" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="@dimen/s"
+                android:background="@color/colorShim" />
+        </LinearLayout>
+
+        <!--home-->
+
+        <!--away-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="16dp"
+                android:background="@color/colorShim" />
+
+            <ImageView
+                android:id="@+id/iv_ie_away"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/imgSize"
+                android:layout_marginBottom="@dimen/s"
+                android:layout_marginTop="@dimen/s"
+                android:src="@drawable/badge_placeholder" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:background="@color/colorShim" />
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
